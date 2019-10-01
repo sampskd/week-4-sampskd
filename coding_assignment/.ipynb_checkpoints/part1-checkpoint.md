@@ -28,14 +28,14 @@ __You are encouraged to collaborate with your peers.__ However, you are also res
 8. __From the `Kernel` menu, use `Restart and Run All` to test your notebook.__ Fix any obvious errors and repeat until you think it is right. Save your notebook when you are done.
 9. __Commit and sync your work to GitHub.__ Ask if you need help.
 10. __Discussion Questions__
-  * How long did it take you to figure out how to do a bullet list in Markdown? What other formatting tricks did you try? - Bullet list did not take long at all. Figuring out how to make the table took much longer
-  * Was there any code that you thought was particularly elegant? How about cryptic or buggy? - The code for the HTML table at the end was difficult to follow 
-  * What does the code `raw_lines = list(f)` in the first code cell do exactly? Where can we learn more about loading files? Why do we bother closing the file at the end of the cell? - That code loads the raw csv file into a python list. We close the file to save memory and processor speed
-  * In the second code cell, why do we try to clean up the data all at once? Why not just deal with it as raw strings? - We need to ensure that the waist and hip data are in integer form so they can be used to calculate the WHR later in the program
-  * What is going on in the line below, also from the second code cell?  - A copy of the raw_lines strings are being made in which all default whitespace characters and commas have been stripped from the end of the string
+  * How long did it take you to figure out how to do a bullet list in Markdown? What other formatting tricks did you try?
+  * Was there any code that you thought was particularly elegant? How about cryptic or buggy?
+  * What does the code `raw_lines = list(f)` in the first code cell do exactly? Where can we learn more about loading files? Why do we bother closing the file at the end of the cell?
+  * In the second code cell, why do we try to clean up the data all at once? Why not just deal with it as raw strings?
+  * What is going on in the line below, also from the second code cell?  
   ```raw_rows = [r.rstrip('\n').split(',') for r in raw_lines]```
-  * What does this do?  - Iterates through each row of raw_rows
+  * What does this do?  
   ```for raw_row in raw_rows[1:]:```
-  * In the third code cell, a list is extended by another list. What does that mean and how is that different from appending list items to the list? How could we do the same thing using `append()`? - Append adds the additional data as a single element at the end of the list. Since we need to add more than one element we must use extend
-  * When might the calculation - If the csv file format changes, such that columns 1 and 2 are no longer waist and hip, repectively
+  * In the third code cell, a list is extended by another list. What does that mean and how is that different from appending list items to the list? How could we do the same thing using `append()`?
+  * When might the calculation
   ```w2h_ratio = row[1]/row[2]``` give inaccurate results?
